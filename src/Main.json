@@ -1,1 +1,13 @@
-{}
+{
+  "catalogue": {
+    "bocchi": {
+      "name": [
+        "Guitar, Loneliness and Blue Planet",
+        "If I could be a constellation",
+        "Never forget"
+      ],
+      "background": ["#4C2633", "#4C2633", "#59420E"],
+      "text": ["#ED709A"]
+    }
+  }
+}
