@@ -76,7 +76,6 @@ const Bocchi = () => {
                       className="text-3xl font-light"
                       style={{ color: `${bocchi.background[id]}` }}
                     >
-                      {" "}
                       13,347 ratings
                     </p>
                   </div>
@@ -84,11 +83,13 @@ const Bocchi = () => {
               </div>
               <div className="w-full h-1/3 flex justify-end">
                 <div className="h-full w-1/3 flex items-center justify-evenly">
-                  <img
-                    src="/assets/icons/steam-logo.png"
-                    className="h-1/2 w-auto opacity-80"
-                    alt=""
-                  />
+                  <a href="" className=" h-1/2 w-auto">
+                    <img
+                      src="/assets/icons/steam-logo.png"
+                      className="h-full w-full opacity-80"
+                      alt=""
+                    />
+                  </a>
                   <img
                     src="/assets/icons/github-logo.png"
                     className="h-1/2 w-auto opacity-80"
