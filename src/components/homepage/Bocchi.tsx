@@ -49,14 +49,19 @@ const Bocchi = () => {
                 style={{ color: `${bocchi.background[id]}` }}
                 className="text-3xl text-justify font-extralight"
               >
-                Created for the Anime Bocchi the Rock! A wallpaper than plays
-                songs and create customizable playlist for users.
+                Created for the Anime Bocchi the Rock! A web-based wallpaper
+                that plays songs and create customizable playlist for users.
               </p>
             </div>
             <div className="w-full h-1/3 flex-col mt-2">
               <div className="h-1/2 w-full flex">
                 <div className="w-2/5 h-full flex items-center justify-center">
-                  <p className="text-6xl font-medium">98%</p>{" "}
+                  <p
+                    className="text-6xl font-medium"
+                    style={{ color: `${bocchi.text[id]}` }}
+                  >
+                    98%
+                  </p>{" "}
                 </div>
                 <div className="w-3/5 h-full flex-col">
                   <div className="w-full h-1/2">
@@ -67,7 +72,13 @@ const Bocchi = () => {
                     />
                   </div>
                   <div className="w-full h-1/2">
-                    <p className="text-3xl font-light"> 13,347 ratings</p>
+                    <p
+                      className="text-3xl font-light"
+                      style={{ color: `${bocchi.background[id]}` }}
+                    >
+                      {" "}
+                      13,347 ratings
+                    </p>
                   </div>
                 </div>
               </div>
