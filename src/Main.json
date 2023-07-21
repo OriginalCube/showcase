@@ -4,10 +4,12 @@
       "name": [
         "Guitar, Loneliness and Blue Planet",
         "If I could be a constellation",
-        "Never forget"
+        "Never forget",
+        "That band",
+        "Into the Light"
       ],
-      "background": ["#4C2633", "#4C2633", "#59420E"],
-      "text": ["#ED709A", "#e81a5b", "#f6b31a"]
+      "background": ["#4C2633", "#4C2633", "#59420E", "#0C3958", "#4E441A"],
+      "text": ["#ED709A", "#e81a5b", "#f6b31a", "#1a7cc3", "#f6b31a"]
     },
     "daily": {
       "book": [
