@@ -6,11 +6,11 @@ const CanvasBackground = (props: any) => {
   React.useEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth - 25;
-    canvas.height = window.innerHeight * 2;
+    canvas.height = window.innerHeight * 1;
     const ctx = canvas.getContext("2d");
 
     function PetalAnim() {
-      const TOTAL = 150;
+      const TOTAL = 35;
       const petalArray = [];
       const petalImg = new Image();
       petalImg.src = petalImage;

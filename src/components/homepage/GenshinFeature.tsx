@@ -145,6 +145,74 @@ const GenshinFeature = () => {
               </motion.div>
             </div>
           </div>
+          <div className="mt-32 h-40 w-full flex items-center justify-center">
+            <div className="w-1/2 h-full flex-col text-white">
+              <p className="w-full text-center text-3xl">Stats</p>
+              <div className="w-full h-2/3 flex items-center justify-evenly mt-4">
+                <motion.div className="w-1/3 h-full flex-col">
+                  <img
+                    className="w-auto h-2/6 m-auto"
+                    src="/assets/icons/download-light.png"
+                    alt=""
+                  />
+                  <p className="text-xl font-thin w-full text-center pt-2">
+                    6,821 <br />
+                    Downloads
+                  </p>
+                </motion.div>
+                <motion.div className="w-1/3 h-full flex-col">
+                  <img
+                    className="w-auto h-2/6 m-auto"
+                    src="/assets/icons/heart.png"
+                    alt=""
+                  />
+                  <p className="text-xl font-thin w-full text-center pt-2">
+                    413 <br />
+                    Favorites
+                  </p>
+                </motion.div>
+                <motion.div className="w-1/3 h-full flex-col">
+                  <img
+                    className="w-auto h-2/6 m-auto"
+                    src="/assets/icons/like.png"
+                    alt=""
+                  />{" "}
+                  <p className="text-xl font-thin w-full text-center pt-2">
+                    120/3 <br />
+                    Ratings
+                  </p>
+                </motion.div>
+              </div>
+              <div className="w-1/3 m-auto h-1/3 flex items-center justify-evenly">
+                <a
+                  className="w-auto h-1/2"
+                  href="https://steamcommunity.com/sharedfiles/filedetails/?id=2938115467"
+                  target="blank_"
+                >
+                  <motion.img
+                    whileHover={{ scale: 1.1 }}
+                    onHoverStart={() => onAudio(0)}
+                    src="/assets/icons/steam.png"
+                    className="w-auto h-full cursor-pointer"
+                    alt=""
+                  />{" "}
+                </a>
+                <a
+                  className="w-auto h-1/2"
+                  href="https://github.com/OriginalCube/WE-Genshin-Impact"
+                  target="blank_"
+                >
+                  <motion.img
+                    whileHover={{ scale: 1.1 }}
+                    onHoverStart={() => onAudio(0)}
+                    src="/assets/icons/github-light.png"
+                    className="w-auto h-full cursor-pointer"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

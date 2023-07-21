@@ -46,7 +46,7 @@ const Genshin = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
-          height: "250vh",
+          height: "350vh",
           width: "100%",
         }}
       >
@@ -60,7 +60,21 @@ const Genshin = () => {
             backgroundAttachment: "fixed",
             height: "100vh",
           }}
-        ></div>
+        >
+          <CanvasBackground canvasId={2} />
+        </div>
+        <div
+          className="w-full genshin-container"
+          style={{
+            backgroundImage: `url(/assets/genshin/images/template_2.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+            height: "100vh",
+          }}
+        >
+          <CanvasBackground canvasId={1} />
+        </div>
       </div>
     </div>
   );

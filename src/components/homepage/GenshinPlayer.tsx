@@ -3,7 +3,9 @@ import { catalogue } from "../../Main.json";
 
 const GenshinPlayer = () => {
   const { genshin_songs } = catalogue;
-  const [songId, setSongId] = React.useState(0);
+  const [songId, setSongId] = React.useState(
+    Math.floor(Math.random() * genshin_songs.length - 1)
+  );
   const [character, setCharacter] = React.useState("");
   const [title, setTitle] = React.useState("");
 
@@ -94,7 +96,7 @@ const GenshinPlayer = () => {
   }, []);
 
   return (
-    <div className="h-auto w-full flex-col sticky top-24 pt-24">
+    <div className="h-auto w-full flex-col sticky top-16 pt-8 z-50">
       <div className="w-full h-auto flex items-center justify-center">
         <input
           type="range"
