@@ -16,3 +16,17 @@
   background-position: center;
   background-size: cover;
 }
+
+@font-face {
+  font-family: "genshinFont";
+  src: local("genshinFont"), url("./fonts/zh-cn.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.genshin-container p {
+  font-family: "genshinFont";
+}
+
+.genshin-font {
+  font-family: "genshinFont";
+}
