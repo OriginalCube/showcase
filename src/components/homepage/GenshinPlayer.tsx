@@ -96,7 +96,7 @@ const GenshinPlayer = () => {
   }, []);
 
   return (
-    <div className="h-auto w-full flex-col sticky top-16 pt-8 z-50">
+    <div className="h-auto w-full flex-col pb-8 z-50">
       <div className="w-full h-auto flex items-center justify-center">
         <input
           type="range"

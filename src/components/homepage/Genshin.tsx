@@ -5,6 +5,16 @@ import GenshinPlayer from "./GenshinPlayer";
 import CanvasBackground from "./CanvasBackground";
 
 const Genshin = () => {
+  const [isPhone, setIsPhone] = React.useState(false);
+
+  React.useEffect(() => {
+    if (window.innerWidth < 768) {
+      console.log("isPhone");
+      setIsPhone(true);
+    } else {
+      setIsPhone(false);
+    }
+  }, [window.innerWidth]);
   return (
     <div
       className="w-full mt-10 genshin-container"
@@ -13,7 +23,7 @@ const Genshin = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
-        height: "200vh",
+        height: "250vh",
       }}
     >
       <div className="h-auto w-full pt-48 flex items-center justify-center">
@@ -38,43 +48,15 @@ const Genshin = () => {
         </div>
       </div>
       <GenshinFeature />
-      <div
-        style={{
-          position: "absolute",
-          top: "350vh",
-          backgroundImage: `url(/assets/genshin/images/template_1.png)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          height: "350vh",
-          width: "100%",
-        }}
-      >
-        <GenshinPlayer />
-        <div
-          className="w-full mt-10 genshin-container"
-          style={{
-            backgroundImage: `url(/assets/genshin/images/wallpaper-default.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-            height: "100vh",
-          }}
-        >
-          <CanvasBackground canvasId={2} />
-        </div>
-        <div
-          className="w-full genshin-container"
-          style={{
-            backgroundImage: `url(/assets/genshin/images/template_2.png)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-            height: "100vh",
-          }}
-        >
-          <CanvasBackground canvasId={1} />
-        </div>
+      <div className="w-full h-screen mt-72">
+        <div className="w-full h-full flex items-end justify-center relative">
+          <img
+            src="/assets/genshin/images/template_1.png"
+            className="w-full h-full absolute object-cover"
+            alt=""
+          />
+          <GenshinPlayer />
+        </div>{" "}
       </div>
     </div>
   );

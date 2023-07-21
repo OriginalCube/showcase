@@ -55,7 +55,7 @@ const GenshinFeature = () => {
   };
 
   return (
-    <div className="h-auto w-full flex items-center justify-center mt-40">
+    <div className="h-auto w-full flex items-center justify-center mt-24">
       <div className="flex-col w-full h-auto">
         <p className="w-full text-center text-6xl text-white">
           Character Talent Book per Region
@@ -102,18 +102,18 @@ const GenshinFeature = () => {
             />
           </motion.div>
         </div>
-        <div className="h-72 w-full flex items-center justify-center mt-20">
+        <div className="h-48 w-full flex items-center justify-center mt-20">
           <div className="w-4/6 h-full flex">
             {daily.book[element].character[day].map((e: any, index: number) => (
               <CharacterDisplay name={e} key={index} />
             ))}
           </div>
         </div>
-        <div className="h-auto w-full text-white flex-col items-center justify-center mt-2">
+        <div className="h-auto w-full text-white flex-col items-center justify-center mt-20">
           <div className="h-auto w-5/6 m-auto">
             <p className="text-6xl w-full text-center">Daily Reminder</p>
           </div>
-          <div className="h-48 w-full mt-20 flex items-center justify-center">
+          <div className="h-48 w-full mt-4 flex items-center justify-center">
             <div className="w-3/6 h-full flex items-center justify-between">
               <motion.div
                 onHoverStart={() => onAudio(0)}
@@ -183,9 +183,9 @@ const GenshinFeature = () => {
                   </p>
                 </motion.div>
               </div>
-              <div className="w-1/3 m-auto h-1/3 flex items-center justify-evenly">
+              <div className="w-1/3 m-auto mt-12 h-1/3 flex items-center justify-evenly">
                 <a
-                  className="w-auto h-1/2"
+                  className="w-auto h-5/6"
                   href="https://steamcommunity.com/sharedfiles/filedetails/?id=2938115467"
                   target="blank_"
                 >
@@ -198,7 +198,7 @@ const GenshinFeature = () => {
                   />{" "}
                 </a>
                 <a
-                  className="w-auto h-1/2"
+                  className="w-auto h-5/6"
                   href="https://github.com/OriginalCube/WE-Genshin-Impact"
                   target="blank_"
                 >
