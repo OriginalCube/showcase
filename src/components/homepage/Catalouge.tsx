@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Bocchi from "./Bocchi";
 import Genshin from "./Genshin";
+import Oshi from "./Oshi";
 
 const Catalouge = () => {
   return (
@@ -13,6 +14,7 @@ const Catalouge = () => {
       </div>
       <Bocchi />
       <Genshin />
+      <Oshi />
     </div>
   );
 };
