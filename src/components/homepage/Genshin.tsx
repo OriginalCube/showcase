@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import GenshinPlayer from "./GenshinPlayer";
 import { catalogue } from "../../Main.json";
+import GenshinFeature from "./GenshinFeature";
 
 const spanVariants = {
   rest: {
@@ -35,18 +36,18 @@ const Genshin = () => {
       className="w-full h-auto flex items-center justify-center genshin-container"
       style={{ backgroundColor: `rgba(${bgColor[backgroundId]},1)` }}
     >
-      <div className="w-5/6 h-screen flex">
-        <div className="w-1/3 h-full flex items-center justify-center">
-          <div className="w-5/6 h-4/6">
+      <div className="w-full md:w-5/6 h-screen flex flex-col md:flex-row">
+        <div className="w-full md:w-1/3 h-full flex items-center justify-center">
+          <div className="w-5/6 h-full md:h-4/6">
             <div
-              className="w-full font-bold h-1/4 text-right text-7xl "
+              className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-right text-4xl sm:text-7xl "
               style={{ color: `${genshinText[backgroundId]}` }}
             >
               <p>Genshin Wallpaper</p>
             </div>
-            <div className="w-full h-2/4 flex items-center">
+            <div className="w-full h-2/4 sm:h-2/4 flex items-center">
               <p
-                className="text-white text-2xl text-justify font-extralight"
+                className="text-white text-sm sm:text-2xl text-justify font-extralight"
                 style={{ color: `${genshinSubText[backgroundId]}` }}
               >
                 A Genshin Impact web-based wallpaper, gives user details about
@@ -58,23 +59,23 @@ const Genshin = () => {
               <div className="h-1/2 w-full flex">
                 <div className="w-2/5 h-full flex items-center justify-center">
                   <p
-                    className="text-6xl font-medium"
+                    className="text-4xl md:text-6xl font-medium"
                     style={{ color: `${genshinText[backgroundId]}` }}
                   >
                     98%
                   </p>{" "}
                 </div>
                 <div className="w-3/5 h-full flex-col">
-                  <div className="w-full h-1/2">
+                  <div className="w-full h-1/2 flex justify-center md:justify-start">
                     <img
                       src="/assets/icons/4rating.png"
                       className="w-auto h-full"
                       alt=""
                     />
                   </div>
-                  <div className="w-full h-1/2">
+                  <div className="w-full h-1/2 flex justify-center md:justify-start">
                     <p
-                      className="text-3xl text-white font-light"
+                      className="text-md md:text-3xl text-white font-light"
                       style={{ color: `${genshinSubText[backgroundId]}` }}
                     >
                       120 ratings
@@ -90,7 +91,7 @@ const Genshin = () => {
                   className="h-full w-2/3 flex items-center justify-start"
                 >
                   <p
-                    className="w-full text-3xl pl-4 font-bold text-left"
+                    className="w-full text-sm md:text-3xl pl-4 font-bold text-left"
                     style={{ color: `${genshinText[backgroundId]}` }}
                   >
                     6,832
@@ -110,7 +111,7 @@ const Genshin = () => {
                   >
                     <img
                       src="/assets/icons/steam.png"
-                      className="h-full w-full opacity-80"
+                      className="h-full w-auto opacity-80"
                       alt=""
                     />
                   </a>
@@ -130,13 +131,14 @@ const Genshin = () => {
             </div>
           </div>
         </div>
-        <div className="h-full w-2/3 relative flex items-center justify-center">
+        <div className="h-full w-full md:w-2/3 relative flex items-center justify-center">
           <div className="w-full h-5/6 relative">
-            <img
+            <motion.img
               className="w-full h-full absolute object-cover"
               src={`/assets/genshin/images/${bgData[backgroundId]}`}
               alt=""
             />{" "}
+            <GenshinFeature />
             <GenshinPlayer
               backgroundId={backgroundId}
               onBackground={onBackground}

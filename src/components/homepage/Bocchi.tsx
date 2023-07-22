@@ -23,12 +23,12 @@ const Bocchi = () => {
 
   return (
     <div className="h-screen w-full flex items-center justify-center">
-      <div className="h-5/6 w-5/6 flex">
+      <div className="h-full md:h-5/6 w-full md:w-5/6 flex flex-col md:flex-row ">
         <motion.div
           initial={{ x: "-50vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="h-full w-2/3 flex items-center justify-center"
+          className="h-1/3 md:h-full w-full md:w-2/3 flex items-center justify-center"
           style={{
             backgroundColor: `${bocchi.background[id]}`,
           }}
@@ -37,38 +37,38 @@ const Bocchi = () => {
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="w-3/5 h-full flex items-center justify-center"
+            className="w-full md:w-3/5 h-full flex items-center justify-center"
           >
             <div className="w-full h-5/6 flex-col">
               <motion.img
                 whileHover={{ scale: 1.05 }}
-                className="w-5/6 h-auto m-auto"
+                className="w-auto h-1/2 md:w-5/6 md:h-auto m-auto"
                 src={`/assets/bocchi/images/${bocchi.name[id]}.jpg`}
                 alt=""
               />
-              <p className="w-full h-2 text-center text-base mt-6 text-white font-light">
+              <p className="w-full h-2 text-center text-sm md:text-base mt-6 text-white font-light">
                 {bocchi.name[id]}
               </p>
-              <div className="w-5/6 m-auto h-16 flex items-center justify-center mt-5">
+              <div className="w-5/6 m-auto h-8 md:h-16 flex items-center justify-center mt-5">
                 <Player setId={setId} id={id} />
               </div>
             </div>
           </motion.div>
         </motion.div>
-        <div className="w-1/3 h-full flex items-center justify-center">
+        <div className="m-auto w-5/6 h-2/3 md:w-1/3 md:h-full flex-col md:flex items-center justify-center">
           <div
-            className="w-5/6 h-2/3 flex-col"
+            className="w-full h-5/6 md:w-5/6 md:h-2/3 flex-col"
             style={{
               color: `${bocchi.text[id]}`,
             }}
           >
-            <div className="w-full font-bold h-1/3 text-left text-7xl">
+            <div className="w-full font-bold h-1/3 text-center md:text-left text-5xl md:text-7xl pt-4 md:pt-0 ">
               <p>Bocchi Wallpaper</p>
             </div>
             <div className="w-full h-1/3 flex items-center">
               <p
                 style={{ color: `${bocchi.background[id]}` }}
-                className="text-3xl text-justify font-extralight"
+                className="text-xl md:text-3xl text-justify font-extralight"
               >
                 Created for the Anime Bocchi the Rock! A web-based wallpaper
                 that plays songs and create customizable playlist for users.
@@ -78,14 +78,14 @@ const Bocchi = () => {
               <div className="h-1/2 w-full flex">
                 <div className="w-2/5 h-full flex items-center justify-center">
                   <p
-                    className="text-6xl font-medium"
+                    className="text-4xl md:text-6xl font-medium"
                     style={{ color: `${bocchi.text[id]}` }}
                   >
                     98%
                   </p>{" "}
                 </div>
                 <div className="w-3/5 h-full flex-col">
-                  <div className="w-full h-1/2">
+                  <div className="w-full h-1/3 md:h-1/2">
                     <img
                       src="/assets/icons/rating.png"
                       className="w-auto h-full"
@@ -94,7 +94,7 @@ const Bocchi = () => {
                   </div>
                   <div className="w-full h-1/2">
                     <p
-                      className="text-3xl font-light"
+                      className="text-2xl md:text-3xl font-light"
                       style={{ color: `${bocchi.background[id]}` }}
                     >
                       13,347 ratings
@@ -109,7 +109,7 @@ const Bocchi = () => {
                   animate="rest"
                   className="h-full w-2/3 flex items-center justify-start"
                 >
-                  <p className="w-full text-3xl pl-4 font-bold text-left">
+                  <p className="w-full text-base md:text-3xl pl-4 font-bold text-left">
                     881, 220
                     <motion.span
                       variants={spanVariants}

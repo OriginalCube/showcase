@@ -105,8 +105,8 @@
       "template_3.jpeg",
       "template_4.jpg"
     ],
-    "bgColor": ["14,47,89", "31,54,96", "0,40,68", "58,60,90", "97,45,108"],
-    "genshinText": ["#5c8eaf", "#ffebd5", "#b7b4d6", "#7e7ea3", "#c269d2"],
-    "genshinSubText": ["#b2d1ea", "#aa9cc9", "#ebe2ef", "#627ca3", "#8c7c9c"]
+    "bgColor": ["14,47,89", "31,54,96", "0,40,68", "58,60,90", "54, 26, 115"],
+    "genshinText": ["#5c8eaf", "#ffebd5", "#b7b4d6", "#F2AEC1", "#D773D9"],
+    "genshinSubText": ["#b2d1ea", "#aa9cc9", "#ebe2ef", "#849EBF", "#E0B6F2"]
   }
 }

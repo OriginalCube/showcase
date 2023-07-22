@@ -114,10 +114,10 @@ const GenshinPlayer = (props: any) => {
           onKeyUp={onScrubEnd}
         />
       </div>
-      <div className="h-24 w-full flex items-center justify-center mt-2">
+      <div className="h-20 md:h-24 w-full flex items-center justify-center mt-2">
         <div className="w-4/6 h-full flex">
           <div
-            className="w-1/6 h-full"
+            className="w-2/6 md:w-1/6 h-full"
             style={{
               backgroundColor: `rgba(${bgColor[props.backgroundId]},.4)`,
             }}
@@ -129,18 +129,20 @@ const GenshinPlayer = (props: any) => {
             />
           </div>
           <div
-            className="w-5/6 h-full flex-col"
+            className="w-4/6 md:w-5/6 h-full flex-col"
             style={{
               backgroundColor: `rgba(${bgColor[props.backgroundId]},.4)`,
             }}
           >
-            <div className="w-full h-2/3 flex-col pt-4">
-              <p className="font-bold text-xl text-white">{title}</p>
-              <p className="font-bold text-sm text-white">
+            <div className="w-full h-2/3 flex-col p-2 md:p-0 pt-4">
+              <p className="font-bold  text-xs md:text-xl text-white">
+                {title}
+              </p>
+              <p className="font-bold text-xs md:text-sm text-white">
                 {character}'s theme
               </p>
             </div>
-            <div className="w-3/6 h-1/3 flex items-center justify-evenly">
+            <div className="w-full md:w-3/6 h-1/3 flex items-center justify-evenly">
               <img
                 onClick={onBackground}
                 src="/assets/genshin/icons/Abyss.webp"
