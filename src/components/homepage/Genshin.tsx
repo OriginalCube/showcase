@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import GenshinPlayer from "./GenshinPlayer";
+import CanvasBackground from "./CanvasBackground";
 
 const spanVariants = {
   rest: {
@@ -21,18 +23,18 @@ const Genshin = () => {
     >
       <div className="w-5/6 h-screen flex">
         <div className="w-1/3 h-full flex items-center justify-center">
-          <div className="w-5/6 h-5/6">
+          <div className="w-5/6 h-4/6">
             <div className="w-full font-bold h-1/4 text-right text-7xl ">
               <p>Genshin Wallpaper</p>
             </div>
-            <div className="w-full h-1/3 flex items-center">
+            <div className="w-full h-2/4 flex items-center">
               <p className="text-2xl text-justify font-extralight">
                 A Genshin Impact web-based wallpaper, gives user details about
                 the daily character talent, reminders for daily primogems, and
                 music player for the released characters.
               </p>
             </div>
-            <div className="w-full h-1/3 flex-col mt-2">
+            <div className="w-full h-1/4 flex-col mt-2">
               <div className="h-1/2 w-full flex">
                 <div className="w-2/5 h-full flex items-center justify-center">
                   <p className="text-6xl font-medium">98%</p>{" "}
@@ -40,7 +42,7 @@ const Genshin = () => {
                 <div className="w-3/5 h-full flex-col">
                   <div className="w-full h-1/2">
                     <img
-                      src="/assets/icons/rating.png"
+                      src="/assets/icons/4rating.png"
                       className="w-auto h-full"
                       alt=""
                     />
@@ -74,7 +76,7 @@ const Genshin = () => {
                     className=" h-1/2 w-auto"
                   >
                     <img
-                      src="/assets/icons/steam-logo.png"
+                      src="/assets/icons/steam.png"
                       className="h-full w-full opacity-80"
                       alt=""
                     />
@@ -85,7 +87,7 @@ const Genshin = () => {
                     className=" h-1/2 w-auto"
                   >
                     <img
-                      src="/assets/icons/github-logo.png"
+                      src="/assets/icons/github-light.png"
                       className="h-full w-auto opacity-80"
                       alt=""
                     />{" "}
@@ -96,12 +98,13 @@ const Genshin = () => {
           </div>
         </div>
         <div className="h-full w-2/3 relative flex items-center justify-center">
-          <div className="w-5/6 h-5/6 relative">
+          <div className="w-full h-5/6 relative">
             <img
               className="w-full h-full absolute object-cover"
               src="/assets/genshin/images/template_1.png"
               alt=""
             />{" "}
+            <GenshinPlayer />
           </div>
         </div>
       </div>

@@ -96,11 +96,11 @@ const GenshinPlayer = () => {
   }, []);
 
   return (
-    <div className="h-auto w-full flex-col pb-8 z-50">
-      <div className="w-full h-auto flex items-center justify-center">
+    <div className="h-auto w-full flex-col pb-8 absolute bottom-4">
+      <div className="w-full h-auto flex items-center justify-center ">
         <input
           type="range"
-          className="w-3/6"
+          className="w-4/6"
           step="1"
           min="0"
           value={trackProgress}
@@ -110,9 +110,9 @@ const GenshinPlayer = () => {
           onKeyUp={onScrubEnd}
         />
       </div>
-      <div className="h-40 w-full flex items-center justify-center mt-2">
-        <div className="w-3/6 h-full flex ">
-          <div className="w-1/6 h-full">
+      <div className="h-24 w-full flex items-center justify-center mt-2">
+        <div className="w-4/6 h-full flex">
+          <div className="w-auto h-full">
             <img
               className="w-full h-full"
               src={`/assets/genshin/characters/${character}/${character}_Frame.webp`}
@@ -123,9 +123,9 @@ const GenshinPlayer = () => {
             className="w-5/6 h-full flex-col"
             style={{ backgroundColor: `rgba(14,47,89,.4)` }}
           >
-            <div className="w-full h-1/2 flex-col p-4">
-              <p className="font-bold text-3xl text-white">{title}</p>
-              <p className="font-bold text-xl text-white">
+            <div className="w-full h-2/3 flex-col p-4">
+              <p className="font-bold text-xl text-white">{title}</p>
+              <p className="font-bold text-sm text-white">
                 {character}'s theme
               </p>
             </div>
