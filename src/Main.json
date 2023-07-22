@@ -97,6 +97,16 @@
         "name": "Dance of Aphros",
         "sub": "Eula"
       }
-    ]
+    ],
+    "bgData": [
+      "template_1.png",
+      "wallpaper-default.jpg",
+      "template_2.png",
+      "template_3.jpeg",
+      "template_4.jpg"
+    ],
+    "bgColor": ["14,47,89", "31,54,96", "0,40,68", "58,60,90", "97,45,108"],
+    "genshinText": ["#5c8eaf", "#ffebd5", "#b7b4d6", "#7e7ea3", "#c269d2"],
+    "genshinSubText": ["#b2d1ea", "#aa9cc9", "#ebe2ef", "#627ca3", "#8c7c9c"]
   }
 }

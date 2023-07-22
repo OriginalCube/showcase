@@ -1,8 +1,9 @@
 import React from "react";
 import { catalogue } from "../../Main.json";
 
-const GenshinPlayer = () => {
+const GenshinPlayer = (props: any) => {
   const { genshin_songs } = catalogue;
+  const { bgColor } = catalogue;
   const [songId, setSongId] = React.useState(
     Math.floor(Math.random() * genshin_songs.length - 1)
   );
@@ -59,7 +60,10 @@ const GenshinPlayer = () => {
     }, [1000]);
   };
 
-  React.useEffect(() => {}, []);
+  //Background
+  const onBackground = () => {
+    props.onBackground();
+  };
 
   React.useEffect(() => {
     if (isPlaying) {
@@ -112,24 +116,37 @@ const GenshinPlayer = () => {
       </div>
       <div className="h-24 w-full flex items-center justify-center mt-2">
         <div className="w-4/6 h-full flex">
-          <div className="w-auto h-full">
+          <div
+            className="w-1/6 h-full"
+            style={{
+              backgroundColor: `rgba(${bgColor[props.backgroundId]},.4)`,
+            }}
+          >
             <img
-              className="w-full h-full"
+              className="w-auto h-full"
               src={`/assets/genshin/characters/${character}/${character}_Frame.webp`}
               alt=""
             />
           </div>
           <div
             className="w-5/6 h-full flex-col"
-            style={{ backgroundColor: `rgba(14,47,89,.4)` }}
+            style={{
+              backgroundColor: `rgba(${bgColor[props.backgroundId]},.4)`,
+            }}
           >
-            <div className="w-full h-2/3 flex-col p-4">
+            <div className="w-full h-2/3 flex-col pt-4">
               <p className="font-bold text-xl text-white">{title}</p>
               <p className="font-bold text-sm text-white">
                 {character}'s theme
               </p>
             </div>
             <div className="w-3/6 h-1/3 flex items-center justify-evenly">
+              <img
+                onClick={onBackground}
+                src="/assets/genshin/icons/Abyss.webp"
+                alt=""
+                className="h-2/5 w-auto cursor-pointer "
+              />
               <img
                 onClick={onBack}
                 src="/assets/bocchi/icons/backward.png"
@@ -145,6 +162,12 @@ const GenshinPlayer = () => {
               <img
                 onClick={onSkip}
                 src="/assets/bocchi/icons/forward.png"
+                alt=""
+                className="h-2/5 w-auto cursor-pointer "
+              />
+              <img
+                onClick={onBack}
+                src="/assets/genshin/icons/playlist.png"
                 alt=""
                 className="h-2/5 w-auto cursor-pointer "
               />
