@@ -5,9 +5,6 @@ import { catalogue } from "../../Main.json";
 import GenshinFeature from "./GenshinFeature";
 
 const spanVariants = {
-  rest: {
-    opacity: 0,
-  },
   hover: {
     opacity: 1,
     transition: {
@@ -22,6 +19,7 @@ const Genshin = () => {
   const { genshinText } = catalogue;
   const { genshinSubText } = catalogue;
   const [backgroundId, setBackgroundId] = React.useState(0);
+  const [talent, setTalent] = React.useState(true);
 
   const onBackground = () => {
     if (backgroundId + 1 < bgData.length) {
@@ -29,6 +27,10 @@ const Genshin = () => {
     } else {
       setBackgroundId(0);
     }
+  };
+
+  const onTalent = () => {
+    setTalent(!talent);
   };
 
   return (
@@ -69,7 +71,7 @@ const Genshin = () => {
                   <div className="w-full h-1/2 flex justify-center md:justify-start">
                     <img
                       src="/assets/icons/4rating.png"
-                      className="w-auto h-full"
+                      className="w-auto h-full opacity-80"
                       alt=""
                     />
                   </div>
@@ -97,7 +99,7 @@ const Genshin = () => {
                     6,832
                     <motion.span
                       variants={spanVariants}
-                      className="text-base pl-2"
+                      className="text-base pl-2 opacity-100 md:opacity-0"
                     >
                       Downloads{" "}
                     </motion.span>
@@ -109,7 +111,8 @@ const Genshin = () => {
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >
-                    <img
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
                       src="/assets/icons/steam.png"
                       className="h-full w-auto opacity-80"
                       alt=""
@@ -120,7 +123,8 @@ const Genshin = () => {
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >
-                    <img
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
                       src="/assets/icons/github-light.png"
                       className="h-full w-auto opacity-80"
                       alt=""
@@ -132,14 +136,15 @@ const Genshin = () => {
           </div>
         </div>
         <div className="h-full w-full md:w-2/3 relative flex items-center justify-center">
-          <div className="w-full h-5/6 relative">
+          <div className="w-full h-full md:h-5/6 relative">
             <motion.img
               className="w-full h-full absolute object-cover"
               src={`/assets/genshin/images/${bgData[backgroundId]}`}
               alt=""
             />{" "}
-            <GenshinFeature />
+            {window.innerWidth > 768 && talent ? <GenshinFeature /> : null}
             <GenshinPlayer
+              onTalent={onTalent}
               backgroundId={backgroundId}
               onBackground={onBackground}
             />

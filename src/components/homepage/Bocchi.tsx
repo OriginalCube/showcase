@@ -4,11 +4,8 @@ import { motion } from "framer-motion";
 import Player from "./Player";
 
 const spanVariants = {
-  rest: {
-    opacity: 0,
-  },
   hover: {
-    opacity: 1,
+    opacity: [0, 1],
     transition: {
       duration: 0.25,
     },
@@ -113,7 +110,7 @@ const Bocchi = () => {
                     881, 220
                     <motion.span
                       variants={spanVariants}
-                      className="text-base pl-2"
+                      className="text-base pl-2 opacity-100 md:opacity-0"
                       style={{ color: `${bocchi.background[id]}` }}
                     >
                       Downloads{" "}
@@ -126,7 +123,8 @@ const Bocchi = () => {
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >
-                    <img
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
                       src="/assets/icons/steam-logo.png"
                       className="h-full w-full opacity-80"
                       alt=""
@@ -137,7 +135,8 @@ const Bocchi = () => {
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >
-                    <img
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
                       src="/assets/icons/github-logo.png"
                       className="h-full w-auto opacity-80"
                       alt=""

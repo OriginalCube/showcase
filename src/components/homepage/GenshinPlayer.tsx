@@ -147,7 +147,7 @@ const GenshinPlayer = (props: any) => {
                 onClick={onBackground}
                 src="/assets/genshin/icons/Abyss.webp"
                 alt=""
-                className="h-2/5 w-auto cursor-pointer "
+                className="h-3/5 w-auto cursor-pointer "
               />
               <img
                 onClick={onBack}
@@ -168,10 +168,10 @@ const GenshinPlayer = (props: any) => {
                 className="h-2/5 w-auto cursor-pointer "
               />
               <img
-                onClick={onBack}
+                onClick={props.onTalent}
                 src="/assets/genshin/icons/playlist.png"
                 alt=""
-                className="h-2/5 w-auto cursor-pointer "
+                className="h-3/5 w-auto cursor-pointer "
               />
             </div>
           </div>
