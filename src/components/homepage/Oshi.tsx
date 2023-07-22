@@ -16,13 +16,18 @@ const Oshi = () => {
 
   return (
     <div className="w-full h-auto">
-      <div className="relative h-screen w-full">
-        <img
-          className="w-full h-full absolute"
-          src={`/assets/oshi/background/${imagePresets[backgroundId]}.png`}
-          alt=""
-        />
+      <div className="h-auto w-full relative">
         <OshiPlayer onBackground={onBackground} />
+        <div className="w-full h-screen relative ">
+          <img
+            className="w-full h-full absolute"
+            src={`/assets/oshi/background/${imagePresets[backgroundId]}.png`}
+            alt=""
+          />
+        </div>
+      </div>
+      <div className="w-full h-screen">
+        <div className="w-full h-5/6 border-2 border-red-500"></div>
       </div>
     </div>
   );

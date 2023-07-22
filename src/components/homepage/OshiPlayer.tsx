@@ -97,7 +97,7 @@ const OshiPlayer = (props: any) => {
   }, []);
   return (
     <div className="w-full h-full absolute flex items-center justify-center">
-      <div className="w-5/6 h-2/6 flex-col">
+      <div className="sticky top-10 w-5/6 h-2/6 flex-col mt-32 z-50">
         <input
           type="range"
           className="w-full"
@@ -121,7 +121,7 @@ const OshiPlayer = (props: any) => {
             />
           </div>
           <div className="w-5/6 h-full flex-col text-white">
-            <div className="h-2/3 w-full flex-col p-4">
+            <div className="h-2/3 w-full flex-col p-4 opacity-80">
               <p className="w-full font-bold text-9xl">
                 {oshiSongs[songId].name}
               </p>
@@ -155,8 +155,8 @@ const OshiPlayer = (props: any) => {
                 className="h-2/5 w-auto cursor-pointer "
               />
               <img
-                onClick={props.onBackground()}
-                src="/assets/bocchi/icons/backward.png"
+                onClick={() => props.onBackground()}
+                src="/assets/oshi/icons/background.png"
                 alt=""
                 className="h-2/5 w-auto cursor-pointer "
               />
