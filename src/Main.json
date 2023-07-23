@@ -129,7 +129,7 @@
       },
       {
         "name": "PIEYON DANCE",
-        "image": "Pieyon.jpg",
+        "image": "pieyon.jpg",
         "music": "Pieyon Boot Dance.mp3",
         "artist": "PIEYON"
       },
@@ -179,8 +179,10 @@
       "37,99,235",
       "225,29,73",
       "147,51,234",
-      "217,119,6"
+      "242, 216, 87"
     ],
+    "oshiText": ["#D95FAE", "#3D9DD9", "#D93250", "#674EBF", "#F2E1AE"],
+    "oshiBackground": ["#591B38", "#111826", "#40101D", "#291C59", "#402116"],
     "imagePresets": ["Ai", "Ruby", "Aqua", "Kana", "Akane", "Mem-cho"]
   }
 }

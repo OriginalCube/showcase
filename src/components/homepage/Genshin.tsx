@@ -46,6 +46,7 @@ const Genshin = () => {
               style={{ color: `${genshinText[backgroundId]}` }}
             >
               <p>Genshin Wallpaper</p>
+              <p className="font-light text-sm mt-2">February 24, 2022</p>
             </div>
             <div className="w-full h-2/4 sm:h-2/4 flex items-center">
               <p

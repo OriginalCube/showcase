@@ -4,6 +4,7 @@ import { catalogue } from "../../Main.json";
 const OshiPlayer = (props: any) => {
   const { oshiSongs, colorHex, colorPreset } = catalogue;
   const [songId, setSongId] = React.useState(0);
+  const [colorBg, setColorBg] = React.useState(0);
 
   const [isPlaying, setIsPlaying] = React.useState(false);
   const audioRef = React.useRef(new Audio(""));
@@ -26,6 +27,14 @@ const OshiPlayer = (props: any) => {
       setSongId(oshiSongs.length - 1);
     } else {
       setSongId(songId - 1);
+    }
+  };
+
+  const onColor = () => {
+    if (colorBg + 1 < colorPreset.length) {
+      setColorBg(colorBg + 1);
+    } else {
+      setColorBg(0);
     }
   };
 
@@ -87,8 +96,8 @@ const OshiPlayer = (props: any) => {
     };
   }, []);
   return (
-    <div className="w-full h-full relative flex items-center justify-center">
-      <div className="top-10 w-5/6 h-1/6 flex-col md:mt-32 z-50">
+    <div className="w-full h-full absolute flex items-center justify-center">
+      <div className="top-10 w-5/6 h-2/6 flex-col mt-32 z-50">
         <input
           type="range"
           className="w-full"
@@ -102,7 +111,7 @@ const OshiPlayer = (props: any) => {
         />
         <div
           className="w-full h-full flex"
-          style={{ backgroundColor: `rgba(${colorHex[props.colorBg]},.4)` }}
+          style={{ backgroundColor: `rgba(${colorHex[colorBg]},.4)` }}
         >
           <div className="w-1/6 h-full">
             <img
@@ -112,18 +121,18 @@ const OshiPlayer = (props: any) => {
             />
           </div>
           <div className="w-5/6 h-full flex-col text-white">
-            <div className="h-2/3 w-full flex-col p-2 md:p-4 opacity-80">
-              <p className="w-full font-bold text-xl md:text-3xl">
+            <div className="h-2/3 w-full flex-col p-4 opacity-80">
+              <p className="w-full font-bold text-9xl">
                 {oshiSongs[songId].name}
               </p>
-              <p className="w-full font-light text-xs md:text-sm">
+              <p className="w-full font-light text-4xl">
                 {oshiSongs[songId].artist}
               </p>
             </div>
             <div className="h-1/3 w-full flex items-center justify-evenly">
               <img
-                onClick={() => props.onColor()}
-                src={`/assets/oshi/icons/${colorPreset[props.colorBg]}.png`}
+                onClick={onColor}
+                src={`/assets/oshi/icons/${colorPreset[colorBg]}.png`}
                 alt=""
                 className="h-2/5 w-auto cursor-pointer "
               />

@@ -21,7 +21,7 @@ const Intro = () => {
         transition={{ delay: 0.25, duration: 1.25 }}
         className={`h-2/3 w-full bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 flex items-center justify-center`}
       >
-        <div className="h-1/3 w-2/5 flex">
+        <div className="h-2/3 md:h-1/3 w-5/6 md:w-2/5 flex flex-col md:flex-row">
           <motion.div
             initial={{ x: "-50vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -34,13 +34,13 @@ const Intro = () => {
                 boxShadow: "-4px 8px rgb(255,255,255)",
                 border: "2px solid white",
               }}
-              className="font-bold text-9xl m-auto p-2 outline-none"
+              className="font-bold text-6xl w-full md:w-auto md:text-9xl m-auto p-2 outline-none"
               onClick={() => setColorId(colorId + 1)}
             >
               Cube's
             </motion.button>
           </motion.div>
-          <div className="w-1/3 h-full flex-col">
+          <div className="w-5/6 md:w-1/3 h-1/3 md:h-full flex-col">
             <motion.div
               initial={{ y: "-50vh", opacity: 0.1 }}
               animate={{ y: 0, opacity: 1 }}
@@ -62,7 +62,7 @@ const Intro = () => {
                     className="h-8 pr-2 w-auto opacity-90"
                     alt=""
                   />
-                  <p className="text-2xl">Github</p>
+                  <p className="text-md md:text-2xl">Github</p>
                 </a>{" "}
               </motion.div>
             </motion.div>
@@ -87,7 +87,7 @@ const Intro = () => {
                     className="h-8 pr-2 w-auto opacity-90"
                     alt=""
                   />
-                  <p className="text-xl">Steam Workshop</p>
+                  <p className="text-md md:text-xl">Steam Workshop</p>
                 </a>
               </motion.div>
             </motion.div>

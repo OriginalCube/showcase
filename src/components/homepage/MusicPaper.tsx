@@ -1,23 +1,7 @@
 import React from "react";
-import { catalogue } from "../../Main.json";
 import { motion } from "framer-motion";
-import Player from "./Player";
 
-const spanVariants = {
-  hover: {
-    opacity: [0, 1],
-    transition: {
-      duration: 0.25,
-    },
-  },
-};
-
-const Bocchi = () => {
-  const { bocchi } = catalogue;
-  const [id, setId] = React.useState(
-    Math.floor(Math.random() * bocchi.name.length)
-  );
-
+const MusicPaper = () => {
   return (
     <div className="h-screen w-full flex items-center justify-center">
       <div className="h-full md:h-5/6 w-full md:w-5/6 flex flex-col md:flex-row ">
@@ -61,7 +45,6 @@ const Bocchi = () => {
           >
             <div className="w-full font-bold h-1/3 text-center md:text-left text-5xl md:text-7xl pt-4 md:pt-0 ">
               <p>Bocchi Wallpaper</p>
-              <p className="text-sm font-light mt-2">December 22, 2022</p>
             </div>
             <div className="w-full h-1/3 flex items-center">
               <p
@@ -153,4 +136,4 @@ const Bocchi = () => {
   );
 };
 
-export default Bocchi;
+export default MusicPaper;
