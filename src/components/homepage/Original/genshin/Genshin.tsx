@@ -62,4 +62,4 @@ const Genshin = () => {
   );
 };
 
-export default Genshin;
+// export default Genshin;

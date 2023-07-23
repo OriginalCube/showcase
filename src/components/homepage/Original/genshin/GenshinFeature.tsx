@@ -219,4 +219,4 @@ const GenshinFeature = () => {
   );
 };
 
-export default GenshinFeature;
+// export default GenshinFeature;
