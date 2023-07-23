@@ -37,7 +37,7 @@ const GenshinPlayer = (props: any) => {
   const onScrub = (value: any) => {
     // Clear any timers already running
     clearInterval(intervalRef.current);
-    audioRef.current.currentTime = value;
+    audioRef.current.currentTime = parseInt(value);
     setProgress(audioRef.current.currentTime);
   };
 
@@ -50,14 +50,14 @@ const GenshinPlayer = (props: any) => {
   const startTimer = () => {
     // Clear any timers already running
     clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
+    setInterval(() => {
       if (audioRef.current.ended) {
         //skips
         onSkip();
       } else {
         setProgress(audioRef.current.currentTime);
       }
-    }, [1000]);
+    }, 1000);
   };
 
   //Background

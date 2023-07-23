@@ -27,7 +27,8 @@ const Player = (props: any) => {
     }
   };
 
-  const onScrub = (value: number) => {
+  const onScrub = (e: string) => {
+    let value = parseInt(e);
     // Clear any timers already running
     clearInterval(intervalRef.current);
     audioRef.current.currentTime = value;
@@ -49,7 +50,7 @@ const Player = (props: any) => {
       } else {
         setProgress(audioRef.current.currentTime);
       }
-    }, [1000]);
+    }, 1000);
   };
 
   React.useEffect(() => {

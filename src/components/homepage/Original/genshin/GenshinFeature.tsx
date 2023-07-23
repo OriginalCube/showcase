@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { catalogue } from "../../Main.json";
+import { catalogue } from "../../../../Main.json";
 
 const GenshinFeature = () => {
   const { daily } = catalogue;
@@ -219,4 +219,4 @@ const GenshinFeature = () => {
   );
 };
 
-// export default GenshinFeature;
+export default GenshinFeature;

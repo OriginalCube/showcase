@@ -1,5 +1,5 @@
 import React from "react";
-import { catalogue } from "../../Main.json";
+import { catalogue } from "../../../../Main.json";
 
 const OshiPlayer = (props: any) => {
   const { oshiSongs, colorHex, colorPreset } = catalogue;
@@ -38,8 +38,9 @@ const OshiPlayer = (props: any) => {
     }
   };
 
-  const onScrub = (value: number) => {
+  const onScrub = (e: string) => {
     // Clear any timers already running
+    let value = parseInt(e);
     clearInterval(intervalRef.current);
     audioRef.current.currentTime = value;
     setProgress(audioRef.current.currentTime);
@@ -54,14 +55,14 @@ const OshiPlayer = (props: any) => {
   const startTimer = () => {
     // Clear any timers already running
     clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
+    setInterval(() => {
       if (audioRef.current.ended) {
         //skips
         onSkip();
       } else {
         setProgress(audioRef.current.currentTime);
       }
-    }, [1000]);
+    }, 1000);
   };
 
   React.useEffect(() => {

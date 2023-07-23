@@ -1,5 +1,5 @@
 import React from "react";
-import { catalogue } from "../../Main.json";
+import { catalogue } from "../../../../Main.json";
 import OshiPlayer from "./OshiPlayer";
 
 const Oshi = () => {

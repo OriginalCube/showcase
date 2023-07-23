@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import GenshinFeature from "./GenshinFeature";
-import GenshinPlayer from "./GenshinPlayer";
-import CanvasBackground from "./CanvasBackground";
 
 const Genshin = () => {
   const [isPhone, setIsPhone] = React.useState(false);
@@ -13,6 +11,7 @@ const Genshin = () => {
       setIsPhone(true);
     } else {
       setIsPhone(false);
+      console.log(isPhone); //random fix
     }
   }, [window.innerWidth]);
   return (
@@ -55,11 +54,11 @@ const Genshin = () => {
             className="w-full h-full absolute object-cover"
             alt=""
           />
-          <GenshinPlayer />
+          {/* <GenshinPlayer /> */}
         </div>{" "}
       </div>
     </div>
   );
 };
 
-// export default Genshin;
+export default Genshin;
