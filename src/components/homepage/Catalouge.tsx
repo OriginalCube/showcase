@@ -1,5 +1,6 @@
 import Bocchi from "./Bocchi";
 import Genshin from "./Genshin";
+import MusicPaper from "./MusicPaper";
 import Oshi from "./Oshi";
 
 const Catalouge = () => {
@@ -12,6 +13,7 @@ const Catalouge = () => {
       </div>
       <Bocchi />
       <Genshin />
+      <MusicPaper />
       <Oshi />
     </div>
   );

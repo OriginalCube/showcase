@@ -183,6 +183,13 @@
     ],
     "oshiText": ["#D95FAE", "#3D9DD9", "#D93250", "#674EBF", "#F2E1AE"],
     "oshiBackground": ["#591B38", "#111826", "#40101D", "#291C59", "#402116"],
-    "imagePresets": ["Ai", "Ruby", "Aqua", "Kana", "Akane", "Mem-cho"]
+    "imagePresets": ["Ai", "Ruby", "Aqua", "Kana", "Akane", "Mem-cho"],
+    "paperPresets": [
+      { "name": "Red", "foreground": "#DA1856", "background": "#580D24" },
+      { "name": "Blue", "foreground": "#1876B9", "background": "#0C3958" },
+      { "name": "Yellow", "foreground": "#E8A819", "background": "#59420E" },
+      { "name": "Pink", "foreground": "#ED709A", "background": "#4C2633" },
+      { "name": "Brown", "foreground": "#1B0A25", "background": "#4D2E2C" }
+    ]
   }
 }

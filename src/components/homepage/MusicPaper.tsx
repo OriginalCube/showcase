@@ -1,7 +1,7 @@
 import React from "react";
-import { catalogue } from "../../Main.json";
 import { motion } from "framer-motion";
-import Player from "./Player";
+import { catalogue } from "../../Main.json";
+import PaperPlayer from "./PaperPlayer";
 
 const spanVariants = {
   hover: {
@@ -12,24 +12,66 @@ const spanVariants = {
   },
 };
 
-const Bocchi = () => {
-  const { bocchi } = catalogue;
-  const [id, setId] = React.useState(
-    Math.floor(Math.random() * bocchi.name.length)
-  );
+const MusicPaper = () => {
+  const { paperPresets } = catalogue;
+  const [backgroundId, setBackgroundId] = React.useState(0);
+
+  const onColor = (e: number) => {
+    setBackgroundId(e);
+  };
 
   return (
-    <div className="h-screen w-full flex items-center justify-center">
-      <div className="h-full md:h-5/6 w-full md:w-5/6 flex flex-col md:flex-row ">
+    <div
+      className="h-screen w-full relative flex items-center justify-center"
+      style={{
+        backgroundColor: `${paperPresets[backgroundId].background}`,
+      }}
+    >
+      <div className="h-full md:h-5/6 w-full md:w-5/6 flex flex-col relative md:flex-row ">
         <motion.div
           initial={{ x: "-50vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.5 }}
           className="h-1/3 md:h-full w-full md:w-2/3 flex items-center justify-center"
-          style={{
-            backgroundColor: `${bocchi.background[id]}`,
-          }}
         >
+          <div className="absolute top-10 h-1/3 w-16 left-0 flex-col opacity-80">
+            <div className="w-full h-1/6 flex items-center justify-center z-50">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(0)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/red.png"
+                alt=""
+              />
+            </div>
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(1)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/blue.png"
+                alt=""
+              />
+            </div>
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(2)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/yellow.png"
+                alt=""
+              />
+            </div>
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(3)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/pink.png"
+                alt=""
+              />
+            </div>
+          </div>
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -40,14 +82,15 @@ const Bocchi = () => {
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 className="w-auto h-1/2 md:w-5/6 md:h-auto m-auto"
-                src={`/assets/bocchi/images/${bocchi.name[id]}.jpg`}
+                src={`/assets/bocchi/images/Into the Light.jpg`}
                 alt=""
               />
               <p className="w-full h-2 text-center text-sm md:text-base mt-6 text-white font-light">
-                {bocchi.name[id]}
+                {}
               </p>
               <div className="w-5/6 m-auto h-8 md:h-16 flex items-center justify-center mt-5">
-                <Player setId={setId} id={id} />
+                <PaperPlayer id={0} />
+                {/** Music Player Here! */}
               </div>
             </div>
           </motion.div>
@@ -56,20 +99,20 @@ const Bocchi = () => {
           <div
             className="w-full h-5/6 md:w-5/6 md:h-5/6 flex-col"
             style={{
-              color: `${bocchi.text[id]}`,
+              color: `${paperPresets[backgroundId].foreground}`,
             }}
           >
             <div className="w-full font-bold h-1/3 text-center md:text-left text-5xl md:text-7xl pt-4 md:pt-0 ">
-              <p>Bocchi Wallpaper</p>
-              <p className="text-sm font-light mt-2">December 22, 2022</p>
+              <p>Music Wallpaper</p>
+              <p className="text-sm font-light mt-2">March 24, 2023</p>
             </div>
             <div className="w-full h-1/3 flex items-center">
               <p
-                style={{ color: `${bocchi.background[id]}` }}
+                style={{ color: `` }}
                 className="text-xl md:text-3xl text-justify font-extralight"
               >
-                Created for the Anime Bocchi the Rock! A web-based wallpaper
-                that plays songs and create customizable playlist for users.
+                Inspired from the Bocchi the Rock wallpaper, where users are
+                allowed to add their own custom music, colors, and images.
               </p>
             </div>
             <div className="w-full h-1/3 flex-col mt-2">
@@ -77,7 +120,9 @@ const Bocchi = () => {
                 <div className="w-2/5 h-full flex items-center justify-center">
                   <p
                     className="text-4xl md:text-6xl font-medium"
-                    style={{ color: `${bocchi.text[id]}` }}
+                    style={{
+                      color: `${paperPresets[backgroundId].foreground}`,
+                    }}
                   >
                     98%
                   </p>{" "}
@@ -93,7 +138,7 @@ const Bocchi = () => {
                   <div className="w-full h-1/2">
                     <p
                       className="text-2xl md:text-3xl font-light"
-                      style={{ color: `${bocchi.background[id]}` }}
+                      style={{ color: `` }}
                     >
                       13,347 ratings
                     </p>
@@ -112,7 +157,9 @@ const Bocchi = () => {
                     <motion.span
                       variants={spanVariants}
                       className="text-base pl-2 opacity-100 md:opacity-0"
-                      style={{ color: `${bocchi.background[id]}` }}
+                      style={{
+                        color: `${paperPresets[backgroundId].foreground}`,
+                      }}
                     >
                       Downloads{" "}
                     </motion.span>
@@ -126,7 +173,7 @@ const Bocchi = () => {
                   >
                     <motion.img
                       whileHover={{ scale: 1.1 }}
-                      src="/assets/icons/steam-logo.png"
+                      src="/assets/icons/steam.png"
                       className="h-full w-full opacity-80"
                       alt=""
                     />
@@ -138,7 +185,7 @@ const Bocchi = () => {
                   >
                     <motion.img
                       whileHover={{ scale: 1.1 }}
-                      src="/assets/icons/github-logo.png"
+                      src="/assets/icons/github-light.png"
                       className="h-full w-auto opacity-80"
                       alt=""
                     />{" "}
@@ -153,4 +200,4 @@ const Bocchi = () => {
   );
 };
 
-export default Bocchi;
+export default MusicPaper;

@@ -61,16 +61,17 @@ const Oshi = () => {
               style={{ color: `rgb(${colorHex[colorBg]})` }}
             >
               <p>Oshi no Ko Wallpaper</p>
-              <p className="text-sm font-light">May 24, 2022</p>
+              <p className="text-sm font-light">May 24, 2023</p>
             </div>
             <div className="w-full h-2/4 sm:h-2/4 flex items-center">
               <p
                 className="text-white text-sm sm:text-2xl text-justify font-extralight"
                 style={{ color: `${oshiText[colorBg]}` }}
               >
-                A Genshin Impact web-based wallpaper, gives user details about
-                the daily character talent, reminders for daily primogems, and
-                music player for the released characters.
+                A web-based wallpaper, inspired from the anime Oshi no Ko and
+                monstercat audio visualizer. Users are allowed to add their own
+                custom background, colors, and are able to use presets saved in
+                the wallpaper.
               </p>
             </div>
             <div className="w-full h-1/4 flex-col mt-2">
