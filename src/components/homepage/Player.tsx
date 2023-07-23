@@ -43,9 +43,8 @@ const Player = (props: any) => {
   const startTimer = () => {
     // Clear any timers already running
     clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
+    setInterval(() => {
       if (audioRef.current.ended) {
-        //skips
         onSkip();
       } else {
         setProgress(audioRef.current.currentTime);

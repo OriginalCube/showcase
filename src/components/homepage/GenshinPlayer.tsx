@@ -34,7 +34,7 @@ const GenshinPlayer = (props: any) => {
     }
   };
 
-  const onScrub = (value: number) => {
+  const onScrub = (value: any) => {
     // Clear any timers already running
     clearInterval(intervalRef.current);
     audioRef.current.currentTime = value;

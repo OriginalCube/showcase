@@ -1,4 +1,3 @@
-import React from "react";
 import Intro from "../components/homepage/Intro";
 import Catalouge from "../components/homepage/Catalouge";
 
