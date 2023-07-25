@@ -1,5 +1,3 @@
-import React from "react";
-
 const Tropapp = () => {
   return (
     <div className="h-auto w-full">
