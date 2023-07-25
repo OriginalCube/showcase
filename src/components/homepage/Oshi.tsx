@@ -57,7 +57,7 @@ const Oshi = () => {
         <div className="w-full md:w-1/3 h-full flex items-center justify-center">
           <div className="w-5/6 h-full md:h-4/6">
             <div
-              className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-left text-4xl sm:text-7xl "
+              className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-left text-4xl lg:text-6xl "
               style={{ color: `rgb(${colorHex[colorBg]})` }}
             >
               <p>Oshi no Ko Wallpaper</p>

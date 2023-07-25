@@ -4,12 +4,17 @@ import { catalogue } from "../../Main.json";
 const OshiPlayer = (props: any) => {
   const { oshiSongs, colorHex, colorPreset } = catalogue;
   const [songId, setSongId] = React.useState(0);
-
+  const [onStart, setOnStart] = React.useState(false);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const audioRef = React.useRef(new Audio(""));
   const [trackProgress, setProgress] = React.useState(0);
   const { duration } = audioRef.current;
   const intervalRef = React.useRef();
+
+  const onPlay = () => {
+    setIsPlaying(!isPlaying);
+    setOnStart(true);
+  };
 
   const onSkip = () => {
     audioRef.current.pause();
@@ -40,6 +45,7 @@ const OshiPlayer = (props: any) => {
   const onScrubEnd = () => {
     // If not already playing, start
     setIsPlaying(true);
+    setOnStart(true);
     startTimer();
   };
 
@@ -48,7 +54,6 @@ const OshiPlayer = (props: any) => {
     clearInterval(intervalRef.current);
     setInterval(() => {
       if (audioRef.current.ended) {
-        //skips
         onSkip();
       } else {
         setProgress(audioRef.current.currentTime);
@@ -77,11 +82,14 @@ const OshiPlayer = (props: any) => {
       `/assets/oshi/songs/${oshiSongs[songId].music}`
     );
     audioRef.current.volume = 0.2;
-    audioRef.current.play();
-    setIsPlaying(true);
+    if (onStart) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
   }, [songId]);
 
   React.useEffect(() => {
+    setIsPlaying(false);
     return () => {
       audioRef.current.pause();
       clearInterval(intervalRef.current);
@@ -137,7 +145,7 @@ const OshiPlayer = (props: any) => {
               <img
                 src={`/assets/bocchi/icons/${isPlaying ? "pause" : "play"}.png`}
                 alt=""
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={onPlay}
                 className="h-2/5 w-auto cursor-pointer "
               />
               <img

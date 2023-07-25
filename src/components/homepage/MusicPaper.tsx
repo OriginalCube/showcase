@@ -13,8 +13,11 @@ const spanVariants = {
 };
 
 const MusicPaper = () => {
-  const { paperPresets } = catalogue;
+  const { paperPresets, paperSongs } = catalogue;
   const [backgroundId, setBackgroundId] = React.useState(0);
+  const [id, setId] = React.useState(
+    Math.floor(Math.random() * (paperSongs.length - 1))
+  );
 
   const onColor = (e: number) => {
     setBackgroundId(e);
@@ -34,44 +37,6 @@ const MusicPaper = () => {
           transition={{ duration: 1.5 }}
           className="h-1/3 md:h-full w-full md:w-2/3 flex items-center justify-center"
         >
-          <div className="absolute top-10 h-1/3 w-16 left-0 flex-col opacity-80">
-            <div className="w-full h-1/6 flex items-center justify-center z-50">
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                onClick={() => onColor(0)}
-                className="w-auto h-full cursor-pointer"
-                src="/assets/oshi/icons/red.png"
-                alt=""
-              />
-            </div>
-            <div className="w-full h-1/6 flex items-center justify-center mt-2">
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                onClick={() => onColor(1)}
-                className="w-auto h-full cursor-pointer"
-                src="/assets/oshi/icons/blue.png"
-                alt=""
-              />
-            </div>
-            <div className="w-full h-1/6 flex items-center justify-center mt-2">
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                onClick={() => onColor(2)}
-                className="w-auto h-full cursor-pointer"
-                src="/assets/oshi/icons/yellow.png"
-                alt=""
-              />
-            </div>
-            <div className="w-full h-1/6 flex items-center justify-center mt-2">
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                onClick={() => onColor(3)}
-                className="w-auto h-full cursor-pointer"
-                src="/assets/oshi/icons/pink.png"
-                alt=""
-              />
-            </div>
-          </div>
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -82,14 +47,14 @@ const MusicPaper = () => {
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 className="w-auto h-1/2 md:w-5/6 md:h-auto m-auto"
-                src={`/assets/bocchi/images/Into the Light.jpg`}
+                src={`/assets/music-paper/images/${paperSongs[id]}.jpg`}
                 alt=""
               />
-              <p className="w-full h-2 text-center text-sm md:text-base mt-6 text-white font-light">
-                {}
+              <p className="w-full h-2 text-center text-sm md:text-base mt-6 md:mt-4 text-white font-light">
+                {paperSongs[id]}
               </p>
               <div className="w-5/6 m-auto h-8 md:h-16 flex items-center justify-center mt-5">
-                <PaperPlayer id={0} />
+                <PaperPlayer setId={setId} id={id} />
                 {/** Music Player Here! */}
               </div>
             </div>
@@ -109,7 +74,7 @@ const MusicPaper = () => {
             <div className="w-full h-1/3 flex items-center">
               <p
                 style={{ color: `` }}
-                className="text-xl md:text-3xl text-justify font-extralight"
+                className="text-xl md:text-3xl text-justify font-extralight opacity-70"
               >
                 Inspired from the Bocchi the Rock wallpaper, where users are
                 allowed to add their own custom music, colors, and images.
@@ -124,23 +89,23 @@ const MusicPaper = () => {
                       color: `${paperPresets[backgroundId].foreground}`,
                     }}
                   >
-                    98%
+                    97%
                   </p>{" "}
                 </div>
                 <div className="w-3/5 h-full flex-col">
                   <div className="w-full h-1/3 md:h-1/2">
                     <img
-                      src="/assets/icons/rating.png"
-                      className="w-auto h-full"
+                      src="/assets/icons/4rating.png"
+                      className="w-auto h-5/6 opacity-90"
                       alt=""
                     />
                   </div>
                   <div className="w-full h-1/2">
                     <p
-                      className="text-2xl md:text-3xl font-light"
+                      className="text-2xl md:text-3xl font-light opacity-70"
                       style={{ color: `` }}
                     >
-                      13,347 ratings
+                      92 ratings
                     </p>
                   </div>
                 </div>
@@ -153,7 +118,7 @@ const MusicPaper = () => {
                   className="h-full w-2/3 flex items-center justify-start"
                 >
                   <p className="w-full text-base md:text-3xl pl-4 font-bold text-left">
-                    881, 220
+                    5,177
                     <motion.span
                       variants={spanVariants}
                       className="text-base pl-2 opacity-100 md:opacity-0"
@@ -192,6 +157,44 @@ const MusicPaper = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="absolute top-10 h-1/3 w-16 left-0 flex-col opacity-80">
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(0)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/purple-2.png"
+                alt=""
+              />
+            </div>
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(1)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/yellow-2.png"
+                alt=""
+              />
+            </div>
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(2)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/blue-2.png"
+                alt=""
+              />
+            </div>
+            <div className="w-full h-1/6 flex items-center justify-center mt-2">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                onClick={() => onColor(3)}
+                className="w-auto h-full cursor-pointer"
+                src="/assets/oshi/icons/black.png"
+                alt=""
+              />
             </div>
           </div>
         </div>

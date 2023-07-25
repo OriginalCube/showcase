@@ -2,16 +2,22 @@ import React from "react";
 import { catalogue } from "../../Main.json";
 
 const PaperPlayer = (props: any) => {
-  const { bocchi } = catalogue;
+  const { paperSongs } = catalogue;
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [onStart, setOnStart] = React.useState(false);
   const audioRef = React.useRef(new Audio(""));
   const [trackProgress, setProgress] = React.useState(0);
   const { duration } = audioRef.current;
   const intervalRef = React.useRef();
 
+  const onPlay = () => {
+    setIsPlaying(!isPlaying);
+    setOnStart(true);
+  };
+
   const onSkip = () => {
     audioRef.current.pause();
-    if (props.id + 1 < bocchi.name.length) {
+    if (props.id + 1 < paperSongs.length) {
       props.setId(props.id + 1);
     } else {
       props.setId(0);
@@ -21,7 +27,7 @@ const PaperPlayer = (props: any) => {
   const onBack = () => {
     audioRef.current.pause();
     if (props.id - 1 < 0) {
-      props.setId(bocchi.name.length - 1);
+      props.setId(paperSongs.length - 1);
     } else {
       props.setId(props.id - 1);
     }
@@ -38,6 +44,7 @@ const PaperPlayer = (props: any) => {
   const onScrubEnd = () => {
     // If not already playing, start
     setIsPlaying(true);
+    setOnStart(true);
     startTimer();
   };
 
@@ -55,11 +62,13 @@ const PaperPlayer = (props: any) => {
 
   React.useEffect(() => {
     audioRef.current = new Audio(
-      `/assets/bocchi/songs/${bocchi.name[props.id]}.flac`
+      `/assets/music-paper/songs/${paperSongs[props.id]}.mp3`
     );
     audioRef.current.volume = 0.2;
-    audioRef.current.play();
-    setIsPlaying(true);
+    if (onStart) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
   }, [props.id]);
 
   React.useEffect(() => {
@@ -103,7 +112,7 @@ const PaperPlayer = (props: any) => {
         <img
           src={`/assets/bocchi/icons/${isPlaying ? "pause" : "play"}.png`}
           alt=""
-          onClick={() => setIsPlaying(!isPlaying)}
+          onClick={onPlay}
           className="h-1/2 w-auto cursor-pointer "
         />
         <img

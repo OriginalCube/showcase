@@ -185,11 +185,17 @@
     "oshiBackground": ["#591B38", "#111826", "#40101D", "#291C59", "#402116"],
     "imagePresets": ["Ai", "Ruby", "Aqua", "Kana", "Akane", "Mem-cho"],
     "paperPresets": [
-      { "name": "Red", "foreground": "#DA1856", "background": "#580D24" },
-      { "name": "Blue", "foreground": "#1876B9", "background": "#0C3958" },
+      { "name": "Purple", "foreground": "#674EBF", "background": "#291C59" },
       { "name": "Yellow", "foreground": "#E8A819", "background": "#59420E" },
-      { "name": "Pink", "foreground": "#ED709A", "background": "#4C2633" },
-      { "name": "Brown", "foreground": "#1B0A25", "background": "#4D2E2C" }
+      { "name": "Blue", "foreground": "#1876B9", "background": "#0C3958" },
+      { "name": "Black", "foreground": "#ffffff", "background": "#000000" }
+    ],
+    "paperSongs": [
+      "City of Stars",
+      "Matsuri",
+      "With the Star",
+      "I wish you Love",
+      "Marilag"
     ]
   }
 }

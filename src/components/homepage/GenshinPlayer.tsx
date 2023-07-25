@@ -5,16 +5,22 @@ const GenshinPlayer = (props: any) => {
   const { genshin_songs } = catalogue;
   const { bgColor } = catalogue;
   const [songId, setSongId] = React.useState(
-    Math.floor(Math.random() * genshin_songs.length - 1)
+    Math.floor(Math.random() * (genshin_songs.length - 1))
   );
   const [character, setCharacter] = React.useState("");
   const [title, setTitle] = React.useState("");
+  const [onStart, setOnStart] = React.useState(false);
 
   const [isPlaying, setIsPlaying] = React.useState(false);
   const audioRef = React.useRef(new Audio(""));
   const [trackProgress, setProgress] = React.useState(0);
   const { duration } = audioRef.current;
   const intervalRef = React.useRef();
+
+  const onPlaying = () => {
+    setIsPlaying(!isPlaying);
+    setOnStart(true);
+  };
 
   const onSkip = () => {
     audioRef.current.pause();
@@ -44,6 +50,7 @@ const GenshinPlayer = (props: any) => {
   const onScrubEnd = () => {
     // If not already playing, start
     setIsPlaying(true);
+    setOnStart(true);
     startTimer();
   };
 
@@ -88,11 +95,14 @@ const GenshinPlayer = (props: any) => {
       `/assets/genshin/characters/${genshin_songs[songId].sub}/${genshin_songs[songId].name}.mp3`
     );
     audioRef.current.volume = 0.2;
-    audioRef.current.play();
-    setIsPlaying(true);
+    if (onStart) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
   }, [songId]);
 
   React.useEffect(() => {
+    setIsPlaying(false);
     return () => {
       audioRef.current.pause();
       clearInterval(intervalRef.current);
@@ -158,7 +168,7 @@ const GenshinPlayer = (props: any) => {
               <img
                 src={`/assets/bocchi/icons/${isPlaying ? "pause" : "play"}.png`}
                 alt=""
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={onPlaying}
                 className="h-2/5 w-auto cursor-pointer "
               />
               <img

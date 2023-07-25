@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Intro = () => {
+const Intro = (props: any) => {
   const [colorId, setColorId] = React.useState(0);
 
   return (
@@ -19,7 +19,7 @@ const Intro = () => {
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.25, duration: 1.25 }}
-        className={`h-2/3 w-full bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 flex items-center justify-center`}
+        className={`h-2/3 w-full bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 flex items-center justify-center z-50`}
       >
         <div className="h-2/3 md:h-1/3 w-5/6 md:w-2/5 flex flex-col md:flex-row">
           <motion.div
@@ -98,8 +98,41 @@ const Intro = () => {
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.25, duration: 1.25 }}
-        className="w-full h-1/3 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900"
-      ></motion.div>
+        className="w-full h-1/3 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 flex items-center justify-center"
+      >
+        <div className="w-2/3 h-5/6 z-20 flex items-center justify-between">
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "4px 8px rgb(255,255,255)",
+              border: "2px solid white",
+            }}
+            className="w-1/3 h-auto p-2 flex items-center justify-center"
+          >
+            <button
+              onClick={() => props.setMode(1)}
+              className="text-6xl font-medium"
+            >
+              Front-End
+            </button>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "-4px 8px rgb(255,255,255)",
+              border: "2px solid white",
+            }}
+            className="w-1/3 h-auto p-2 flex items-center justify-center"
+          >
+            <button
+              onClick={() => props.setMode(2)}
+              className="text-6xl font-medium"
+            >
+              Full-Stack
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 };

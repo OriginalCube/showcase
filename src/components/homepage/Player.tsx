@@ -4,17 +4,24 @@ import { catalogue } from "../../Main.json";
 const Player = (props: any) => {
   const { bocchi } = catalogue;
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [onStart, setOnStart] = React.useState(false);
   const audioRef = React.useRef(new Audio(""));
   const [trackProgress, setProgress] = React.useState(0);
   const { duration } = audioRef.current;
   const intervalRef = React.useRef();
 
+  const onPlay = () => {
+    setIsPlaying(!isPlaying);
+    setOnStart(true);
+  };
+
   const onSkip = () => {
-    audioRef.current.pause();
     if (props.id + 1 < bocchi.name.length) {
       props.setId(props.id + 1);
+      setIsPlaying(true);
     } else {
       props.setId(0);
+      setIsPlaying(true);
     }
   };
 
@@ -38,6 +45,7 @@ const Player = (props: any) => {
   const onScrubEnd = () => {
     // If not already playing, start
     setIsPlaying(true);
+    setOnStart(true);
     startTimer();
   };
 
@@ -54,12 +62,12 @@ const Player = (props: any) => {
   };
 
   React.useEffect(() => {
-    audioRef.current = new Audio(
-      `/assets/bocchi/songs/${bocchi.name[props.id]}.flac`
-    );
+    audioRef.current.src = `/assets/bocchi/songs/${bocchi.name[props.id]}.flac`;
     audioRef.current.volume = 0.2;
-    audioRef.current.play();
-    setIsPlaying(true);
+    if (onStart) {
+      setIsPlaying(true);
+      audioRef.current.play();
+    }
   }, [props.id]);
 
   React.useEffect(() => {
@@ -103,7 +111,7 @@ const Player = (props: any) => {
         <img
           src={`/assets/bocchi/icons/${isPlaying ? "pause" : "play"}.png`}
           alt=""
-          onClick={() => setIsPlaying(!isPlaying)}
+          onClick={onPlay}
           className="h-1/2 w-auto cursor-pointer "
         />
         <img
