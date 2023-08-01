@@ -40,20 +40,6 @@ const Oshi = () => {
       style={{ backgroundColor: `${oshiBackground[colorBg]}` }}
     >
       <div className="w-full md:w-5/6 h-screen flex flex-col md:flex-row">
-        <div className="h-full w-full md:w-2/3 relative flex items-center justify-center">
-          <div className="w-full h-full md:h-5/6 relative">
-            <img
-              className="absolute h-full w-full object-contain"
-              src={`/assets/oshi/background/${imagePresets[backgroundId]}.png`}
-              alt=""
-            />
-            <OshiPlayer
-              onBackground={onBackground}
-              onColor={onColor}
-              colorBg={colorBg}
-            />
-          </div>
-        </div>
         <div className="w-full md:w-1/3 h-full flex items-center justify-center">
           <div className="w-5/6 h-full md:h-4/6">
             <div
@@ -150,6 +136,20 @@ const Oshi = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="h-full w-full md:w-2/3 relative flex items-center justify-center">
+          <div className="w-full h-full md:h-5/6 relative">
+            <img
+              className="absolute h-full w-full object-contain"
+              src={`/assets/oshi/background/${imagePresets[backgroundId]}.png`}
+              alt=""
+            />
+            <OshiPlayer
+              onBackground={onBackground}
+              onColor={onColor}
+              colorBg={colorBg}
+            />
           </div>
         </div>
       </div>
