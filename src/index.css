@@ -9,6 +9,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .homepage-waves {
   position: absolute;
   bottom: 0;

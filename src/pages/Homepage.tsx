@@ -5,11 +5,14 @@ import Main from "../components/full-stack/FullStack";
 
 const Homepage = () => {
   const [mode, setMode] = React.useState(0);
+
   return (
     <div className="h-auto w-full ">
       <Intro setMode={setMode} />
-      {mode === 1 ? <Catalouge /> : null}
-      {mode === 2 ? <Main /> : null}
+      <section id="main">
+        {mode === 1 ? <Catalouge /> : null}
+        {mode === 2 ? <Main /> : null}
+      </section>
     </div>
   );
 };

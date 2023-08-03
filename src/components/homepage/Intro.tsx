@@ -1,8 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Intro = (props: any) => {
+type IntroProps = {
+  setMode : (e:number) => void
+}
+
+const Intro = (props: IntroProps) => {
   const [colorId, setColorId] = React.useState(0);
+
+  const onMode = (e:number) =>{
+    props.setMode(e); 
+  }
 
   return (
     <div className={`relative h-screen w-full flex-col text-white`}>
@@ -109,12 +117,13 @@ const Intro = (props: any) => {
             }}
             className="w-1/3 h-auto p-2 flex items-center justify-center"
           >
+            <a href="#main">
             <button
-              onClick={() => props.setMode(1)}
+              onClick={() => onMode(1)}
               className="text-6xl font-medium"
             >
               Front-End
-            </button>
+            </button></a>
           </motion.div>
           <motion.div
             whileHover={{
@@ -124,12 +133,12 @@ const Intro = (props: any) => {
             }}
             className="w-1/3 h-auto p-2 flex items-center justify-center"
           >
-            <button
-              onClick={() => props.setMode(2)}
+            <a href="#main"><button
+              onClick={() => onMode(2)}
               className="text-6xl font-medium"
             >
               Full-Stack
-            </button>
+            </button></a>
           </motion.div>
         </div>
       </motion.div>
