@@ -68,13 +68,13 @@ const MusicPaper = () => {
             }}
           >
             <div className="w-full font-bold h-1/3 text-center md:text-left text-5xl md:text-7xl pt-4 md:pt-0 ">
-              <p>Music Wallpaper</p>
               <p className="text-sm font-light mt-2">March 24, 2023</p>
+              <p>Music Wallpaper</p>
             </div>
             <div className="w-full h-1/3 flex items-center">
               <p
                 style={{ color: `` }}
-                className="text-xl md:text-3xl text-justify font-extralight opacity-70"
+                className="text-xl md:text-3xl text-left font-extralight opacity-70"
               >
                 Inspired from the Bocchi the Rock wallpaper, where users are
                 allowed to add their own custom music, colors, and images.

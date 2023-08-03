@@ -43,15 +43,15 @@ const Oshi = () => {
         <div className="w-full md:w-1/3 h-full flex items-center justify-center">
           <div className="w-5/6 h-full md:h-4/6">
             <div
-              className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-left text-4xl lg:text-6xl "
+              className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-right text-4xl lg:text-6xl "
               style={{ color: `rgb(${colorHex[colorBg]})` }}
             >
-              <p>Oshi no Ko Wallpaper</p>
               <p className="text-sm font-light">May 24, 2023</p>
+              <p>Oshi no Ko Wallpaper</p>
             </div>
             <div className="w-full h-2/4 sm:h-2/4 flex items-center">
               <p
-                className="text-white text-sm sm:text-2xl text-justify font-extralight"
+                className="text-white text-sm sm:text-2xl text-right font-extralight"
                 style={{ color: `${oshiText[colorBg]}` }}
               >
                 A web-based wallpaper, inspired from the anime Oshi no Ko and

@@ -45,12 +45,12 @@ const Genshin = () => {
               className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-right text-4xl sm:text-7xl "
               style={{ color: `${genshinText[backgroundId]}` }}
             >
-              <p>Genshin Wallpaper</p>
               <p className="font-light text-sm mt-2">February 24, 2023</p>
+              <p>Genshin Wallpaper</p>
             </div>
             <div className="w-full h-2/4 sm:h-2/4 flex items-center">
               <p
-                className="text-white text-sm sm:text-2xl text-justify font-extralight"
+                className="text-white text-sm sm:text-2xl text-right font-extralight"
                 style={{ color: `${genshinSubText[backgroundId]}` }}
               >
                 A Genshin Impact web-based wallpaper, gives user details about
