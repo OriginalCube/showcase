@@ -76,7 +76,7 @@ const Oshi = () => {
                     className="text-4xl md:text-6xl font-medium"
                     style={{ color: `rgb(${colorHex[colorBg]})` }}
                   >
-                    92%
+                    94%
                   </p>{" "}
                 </div>
                 <div className="w-3/5 h-full flex-col">
@@ -92,7 +92,7 @@ const Oshi = () => {
                       className="text-md md:text-3xl text-white font-light"
                       style={{ color: `${oshiText[colorBg]}` }}
                     >
-                      52 ratings
+                      69 ratings
                     </p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const Oshi = () => {
                     className="w-full text-sm md:text-3xl pl-4 font-bold text-left"
                     style={{ color: `rgb(${colorHex[colorBg]})` }}
                   >
-                    3,717
+                    4,661
                     <motion.span
                       variants={spanVariants}
                       className="text-base pl-2 opacity-100 md:opacity-0"

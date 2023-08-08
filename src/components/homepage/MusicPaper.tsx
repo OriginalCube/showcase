@@ -116,7 +116,7 @@ const MusicPaper = () => {
                       className="text-2xl md:text-3xl font-light opacity-70"
                       style={{ color: `` }}
                     >
-                      92 ratings
+                      98 ratings
                     </p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ const MusicPaper = () => {
                   className="h-full w-2/3 flex items-center justify-start"
                 >
                   <p className="w-full text-base md:text-3xl pl-4 font-bold text-left">
-                    5,177
+                    5,636
                     <motion.span
                       variants={spanVariants}
                       className="text-base pl-2 opacity-100 md:opacity-0"

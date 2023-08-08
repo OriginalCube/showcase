@@ -104,7 +104,7 @@ const Bocchi = () => {
                       className="text-2xl md:text-3xl font-light"
                       style={{ color: `${bocchi.background[id]}` }}
                     >
-                      13,347 ratings
+                      14,092 ratings
                     </p>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const Bocchi = () => {
                   className="h-full w-2/3 flex items-center justify-start"
                 >
                   <p className="w-full text-base md:text-3xl pl-4 font-bold text-left">
-                    881, 220
+                    931,430
                     <motion.span
                       variants={spanVariants}
                       className="text-base pl-2 opacity-100 md:opacity-0"

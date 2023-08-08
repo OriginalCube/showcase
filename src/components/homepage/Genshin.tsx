@@ -90,7 +90,7 @@ const Genshin = () => {
                       className="text-md md:text-3xl text-white font-light"
                       style={{ color: `${genshinSubText[backgroundId]}` }}
                     >
-                      120 ratings
+                      124 ratings
                     </p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ const Genshin = () => {
                     className="w-full text-sm md:text-3xl pl-4 font-bold text-left"
                     style={{ color: `${genshinText[backgroundId]}` }}
                   >
-                    6,832
+                    7,282
                     <motion.span
                       variants={spanVariants}
                       className="text-base pl-2 opacity-100 md:opacity-0"
