@@ -115,12 +115,12 @@ const Intro = (props: IntroProps) => {
               boxShadow: "4px 8px rgb(255,255,255)",
               border: "2px solid white",
             }}
-            className="w-1/3 h-auto p-2 flex items-center justify-center"
+            className="w-full md:w-1/3 h-auto p-2 flex items-center justify-center"
           >
             <a href="#main">
             <button
               onClick={() => onMode(1)}
-              className="text-6xl font-medium"
+              className="text-xl md:text-6xl font-medium"
             >
               Front-End
             </button></a>
@@ -131,11 +131,11 @@ const Intro = (props: IntroProps) => {
               boxShadow: "-4px 8px rgb(255,255,255)",
               border: "2px solid white",
             }}
-            className="w-1/3 h-auto p-2 flex items-center justify-center"
+            className="w-full md:w-1/3 h-auto p-2 flex items-center justify-center"
           >
             <a href="#main"><button
               onClick={() => onMode(2)}
-              className="text-6xl font-medium"
+              className="text-xl md:text-6xl font-medium"
             >
               Full-Stack
             </button></a>

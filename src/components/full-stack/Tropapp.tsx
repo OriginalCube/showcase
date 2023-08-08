@@ -2,7 +2,7 @@ const Tropapp = () => {
   const imageAddress = "/assets/tropapp/images/";
   const iconAddress = "/assets/tropapp/icons/";
   return (
-    <div className="h-auto w-full flex items-center justify-center pt-10">
+    <div className="h-auto w-full flex items-center justify-center pt-10 bg-gray-100">
       <div className="w-full h-auto flex flex-col gap-24 items-center justify-center">
         <div className="w-full md:w-2/3 h-auto flex flex-col md:flex-row gap-4 items-center justify-around">
           <p className="text-5xl md:text-8xl w-full md:w-1/2 font-bold text-blue-400 text-center md:text-left">Tropapp</p>
@@ -16,25 +16,24 @@ const Tropapp = () => {
         <div className="w-full h-auto flex flex-col gap-24">
           <div className="w-full h-auto flex items-center justify-center">
             <div className="w-full md:w-2/3 flex flex-col h-auto items-center justify-center gap-32 mb-10">
-              <div className="w-full h-auto flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-24">
+              <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-24">
                 <img
                   src={`${imageAddress}register.png`}
                   className="w-full md:w-2/3 h-auto md:border-2 border-blue-300"
                   alt=""
                 />
                 <div className="w-full md:w-1/3 h-auto flex flex-col gap-2 items-center">
-                  <p className="text-4xl md:text-6xl font-bold w-full text-blue-300 text-center md:text-left">
+                  <p className="text-4xl md:text-4xl font-bold w-full text-blue-300 text-center md:text-left">
                    Login & Register 
                   </p>
                   <p className="text-xl text-justify w-5/6 md:w-auto md:text-left h-auto">
-                    This is the homepage where you can see all the post of the
-                    people who you follow on your account.
+                    This is the login/register page where users will provide their credentials to be able to use the website and are encrypted.
                   </p>
                 </div>
               </div>
-              <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-24">
+              <div className="w-full h-auto flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-24">
                 <div className="w-full md:w-1/3 h-auto flex flex-col gap-2 items-center">
-                  <p className="text-4xl md:text-6xl font-bold w-full text-blue-300 text-center md:text-left">
+                  <p className="text-4xl md:text-4xl font-bold w-full text-blue-300 text-center md:text-left">
                     Homepage
                   </p>
                   <p className="text-xl text-justify w-5/6 md:w-auto md:text-left h-auto">
@@ -48,14 +47,14 @@ const Tropapp = () => {
                   alt=""
                 />
               </div>
-              <div className="w-full h-auto flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-24">
+              <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-24">
                 <img
                   src={`${imageAddress}profile.png`}
                   className="w-full md:w-2/3 h-auto md:border-2 border-blue-300"
                   alt=""
                 />
                 <div className="w-full md:w-1/3 h-auto flex flex-col gap-2 items-center">
-                  <p className="text-4xl md:text-6xl font-bold w-full text-blue-300 text-center md:text-left">
+                  <p className="text-4xl md:text-4xl font-bold w-full text-blue-300 text-center md:text-left">
                     Profile Page   
                   </p>
                   <p className="text-xl text-justify w-5/6 md:w-auto md:text-left h-auto">
@@ -64,9 +63,9 @@ const Tropapp = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-24">
+              <div className="w-full h-auto flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-24">
                 <div className="w-full md:w-1/3 h-auto flex flex-col gap-2 items-center">
-                  <p className="text-4xl md:text-6xl font-bold w-full text-blue-300 text-center md:text-left">
+                  <p className="text-4xl md:text-4xl font-bold w-full text-blue-300 text-center md:text-left">
                     Message
                   </p>
                   <p className="text-xl text-justify w-5/6 md:w-auto md:text-left h-auto">

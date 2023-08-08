@@ -7,7 +7,7 @@ const Catalouge = () => {
   return (
     <div className="h-auto w-full relative text-gray-800">
       <div className="w-full h-auto">
-        <p className="text-center pt-80 pb-24 text-4xl md:text-8xl">
+        <p className="text-center pt-40 pb-40 text-4xl md:text-8xl">
           Wallpaper Engine Works
         </p>
       </div>

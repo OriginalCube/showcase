@@ -4,7 +4,7 @@ const FullStack = () => {
   return (
     <div className="w-full h-auto">
       <div className="w-full h-auto">
-        <p className="text-center font-thin pt-80 pb-24 text-4xl md:text-8xl">
+        <p className="text-center font-thin pt-40 pb-40 text-4xl md:text-8xl">
           Full-Stack Apps
         </p>
       </div>

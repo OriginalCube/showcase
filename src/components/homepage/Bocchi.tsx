@@ -66,7 +66,7 @@ const Bocchi = () => {
             <div className="w-full h-1/3 flex items-center">
               <p
                 style={{ color: `${bocchi.background[id]}` }}
-                className="text-xl md:text-3xl text-left font-extralight"
+                className="text-xl md:text-3xl text-justify md:text-left font-extralight"
               >
                 Created for the Anime Bocchi the Rock! A web-based wallpaper
                 that plays songs and create customizable playlist for users.

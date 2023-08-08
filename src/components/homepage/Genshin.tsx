@@ -38,7 +38,7 @@ const Genshin = () => {
       className="w-full h-auto flex items-center justify-center genshin-container"
       style={{ backgroundColor: `rgba(${bgColor[backgroundId]},1)` }}
     >
-      <div className="w-full md:w-5/6 h-screen flex flex-col md:flex-row">
+      <div className="w-full md:w-5/6 h-screen flex flex-col-reverse md:flex-row">
         <div className="w-full md:w-1/3 h-full flex items-center justify-center">
           <div className="w-5/6 h-full md:h-4/6">
             <div
@@ -50,7 +50,7 @@ const Genshin = () => {
             </div>
             <div className="w-full h-2/4 sm:h-2/4 flex items-center">
               <p
-                className="text-white text-sm sm:text-2xl text-right font-extralight"
+                className="text-white text-sm sm:text-2xl text-justify md:text-right font-extralight"
                 style={{ color: `${genshinSubText[backgroundId]}` }}
               >
                 A Genshin Impact web-based wallpaper, gives user details about
