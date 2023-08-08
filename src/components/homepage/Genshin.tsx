@@ -39,7 +39,16 @@ const Genshin = () => {
       style={{ backgroundColor: `rgba(${bgColor[backgroundId]},1)` }}
     >
       <div className="w-full md:w-5/6 h-screen flex flex-col-reverse md:flex-row">
-        <div className="w-full md:w-1/3 h-full flex items-center justify-center">
+        <motion.div
+          className="w-full md:w-1/3 h-full flex items-center justify-center"
+          variants={{
+            hidden: { opacity: 0, x: -125 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
           <div className="w-5/6 h-full md:h-4/6">
             <div
               className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-right text-4xl sm:text-7xl "
@@ -135,9 +144,18 @@ const Genshin = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="h-full w-full md:w-2/3 relative flex items-center justify-center">
-          <div className="w-full h-full md:h-5/6 relative">
+          <motion.div
+            className="w-full h-full md:h-5/6 relative"
+            variants={{
+              hidden: { opacity: 0, x: 125 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5, delay: 0.25 }}
+          >
             <motion.img
               className="w-full h-full absolute object-cover"
               src={`/assets/genshin/images/${bgData[backgroundId]}`}
@@ -149,7 +167,7 @@ const Genshin = () => {
               backgroundId={backgroundId}
               onBackground={onBackground}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

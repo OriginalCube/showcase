@@ -2,22 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 
 type IntroProps = {
-  setMode : (e:number) => void
-}
+  setMode: (e: number) => void;
+};
 
 const Intro = (props: IntroProps) => {
   const [colorId, setColorId] = React.useState(0);
 
-  const onMode = (e:number) =>{
-    props.setMode(e); 
-  }
+  const onMode = (e: number) => {
+    props.setMode(e);
+  };
 
   return (
-    <div className={`relative h-screen w-full flex-col text-white`}>
+    <div className={`relative h-screen w-full flex-col text-white bg-gray-800`}>
       <motion.div
-        initial={{ y: "50vh" }}
-        animate={{ y: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
         className="homepage-waves h-full"
         style={{
           backgroundImage: `url(/assets/images/layered-waves-haikei.svg)`,
@@ -61,6 +58,7 @@ const Intro = (props: IntroProps) => {
                 className="w-full h-full"
               >
                 <a
+                  rel="noopener"
                   className="w-full h-full flex items-center justify-start p-2"
                   href="https://github.com/OriginalCube"
                   target="_blank"
@@ -86,6 +84,7 @@ const Intro = (props: IntroProps) => {
                 className="w-full h-full"
               >
                 <a
+                  rel="noopener"
                   className="w-full h-full flex items-center justify-start p-2"
                   href="https://steamcommunity.com/id/OriginalCube/myworkshopfiles/"
                   target="_blank"
@@ -118,12 +117,13 @@ const Intro = (props: IntroProps) => {
             className="w-full md:w-1/3 h-auto p-2 flex items-center justify-center"
           >
             <a href="#main">
-            <button
-              onClick={() => onMode(1)}
-              className="text-xl md:text-6xl font-medium"
-            >
-              Front-End
-            </button></a>
+              <button
+                onClick={() => onMode(1)}
+                className="text-xl md:text-6xl font-medium"
+              >
+                Front-End
+              </button>
+            </a>
           </motion.div>
           <motion.div
             whileHover={{
@@ -133,12 +133,14 @@ const Intro = (props: IntroProps) => {
             }}
             className="w-full md:w-1/3 h-auto p-2 flex items-center justify-center"
           >
-            <a href="#main"><button
-              onClick={() => onMode(2)}
-              className="text-xl md:text-6xl font-medium"
-            >
-              Full-Stack
-            </button></a>
+            <a href="#main">
+              <button
+                onClick={() => onMode(2)}
+                className="text-xl md:text-6xl font-medium"
+              >
+                Full-Stack
+              </button>
+            </a>
           </motion.div>
         </div>
       </motion.div>

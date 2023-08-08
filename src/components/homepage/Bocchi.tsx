@@ -14,28 +14,28 @@ const spanVariants = {
 
 const Bocchi = () => {
   const { bocchi } = catalogue;
+
   const [id, setId] = React.useState(
-    Math.floor(Math.random() * bocchi.name.length)
+    Math.floor(Math.random() * bocchi.name.length),
   );
 
   return (
     <div className="h-screen w-full flex items-center justify-center">
       <div className="h-full md:h-5/6 w-full md:w-5/6 flex flex-col md:flex-row ">
         <motion.div
-          initial={{ x: "-50vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -75 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          initial="hidden"
           className="h-1/3 md:h-full w-full md:w-2/3 flex items-center justify-center"
           style={{
             backgroundColor: `${bocchi.background[id]}`,
           }}
         >
-          <motion.div
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="w-full md:w-3/5 h-full flex items-center justify-center"
-          >
+          <motion.div className="w-full md:w-3/5 h-full flex items-center justify-center">
             <div className="w-full h-5/6 flex-col">
               <motion.img
                 whileHover={{ scale: 1.05 }}
@@ -52,7 +52,16 @@ const Bocchi = () => {
             </div>
           </motion.div>
         </motion.div>
-        <div className="m-auto w-5/6 h-2/3 md:w-1/3 md:h-full flex-col md:flex items-center justify-center">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: -75 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          initial="hidden"
+          whileInView="visible"
+          className="m-auto w-5/6 h-2/3 md:w-1/3 md:h-full flex-col md:flex items-center justify-center"
+        >
           <div
             className="w-full h-5/6 md:w-5/6 md:h-5/6 flex-col"
             style={{
@@ -147,7 +156,7 @@ const Bocchi = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

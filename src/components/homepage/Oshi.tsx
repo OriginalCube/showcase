@@ -40,7 +40,16 @@ const Oshi = () => {
       style={{ backgroundColor: `${oshiBackground[colorBg]}` }}
     >
       <div className="w-full md:w-5/6 h-screen flex flex-col-reverse md:flex-row">
-        <div className="w-full md:w-1/3 h-full flex items-center justify-center">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 125 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="w-full md:w-1/3 h-full flex items-center justify-center"
+        >
           <div className="w-5/6 h-full md:h-4/6">
             <div
               className="w-full font-bold p-4 md:p-0 h-1/4 text-center md:text-right text-4xl lg:text-6xl "
@@ -137,9 +146,18 @@ const Oshi = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="h-full w-full md:w-2/3 relative flex items-center justify-center">
-          <div className="w-full h-full md:h-5/6 relative">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 125 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="w-full h-full md:h-5/6 relative"
+          >
             <img
               className="absolute h-full w-full object-contain"
               src={`/assets/oshi/background/${imagePresets[backgroundId]}.png`}
@@ -150,7 +168,7 @@ const Oshi = () => {
               onColor={onColor}
               colorBg={colorBg}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

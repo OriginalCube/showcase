@@ -90,6 +90,7 @@ const Player = (props: any) => {
     <div className="h-full w-full flex-col items-center justify-evenly">
       <div className="h-1/6 w-full flex items-center justify-center">
         <input
+          title="audio"
           className="w-2/3 h-full"
           type="range"
           step="1"

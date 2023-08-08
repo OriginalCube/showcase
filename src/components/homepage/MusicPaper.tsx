@@ -16,7 +16,7 @@ const MusicPaper = () => {
   const { paperPresets, paperSongs } = catalogue;
   const [backgroundId, setBackgroundId] = React.useState(0);
   const [id, setId] = React.useState(
-    Math.floor(Math.random() * (paperSongs.length - 1))
+    Math.floor(Math.random() * (paperSongs.length - 1)),
   );
 
   const onColor = (e: number) => {
@@ -38,9 +38,13 @@ const MusicPaper = () => {
           className="h-1/3 md:h-full w-full md:w-2/3 flex items-center justify-center"
         >
           <motion.div
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -125 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5, delay: 0.25 }}
             className="w-full md:w-3/5 h-full flex items-center justify-center"
           >
             <div className="w-full h-5/6 flex-col">
@@ -61,7 +65,14 @@ const MusicPaper = () => {
           </motion.div>
         </motion.div>
         <div className="m-auto w-5/6 h-2/3 md:w-1/3 md:h-full flex-col md:flex items-center justify-center">
-          <div
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: 125 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5, delay: 0.25 }}
             className="w-full h-5/6 md:w-5/6 md:h-5/6 flex-col"
             style={{
               color: `${paperPresets[backgroundId].foreground}`,
@@ -158,7 +169,7 @@ const MusicPaper = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className="absolute top-10 h-1/3 w-16 left-0 flex-col opacity-80">
             <div className="w-full h-1/6 flex items-center justify-center mt-2">
               <motion.img
