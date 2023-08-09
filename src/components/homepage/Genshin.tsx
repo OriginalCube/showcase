@@ -117,7 +117,7 @@ const Genshin = () => {
                 </motion.div>
                 <div className="h-full w-1/3 flex items-center justify-evenly">
                   <a
-                    href="https://steamcommunity.com/sharedfiles/filedetails/?id=2905017768"
+                    href="https://steamcommunity.com/sharedfiles/filedetails/?id=2938115467"
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >
@@ -129,7 +129,7 @@ const Genshin = () => {
                     />
                   </a>
                   <a
-                    href="https://github.com/OriginalCube/Bocchi-Wallpaper"
+                    href="https://github.com/OriginalCube/WE-Genshin-Impact"
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >

@@ -131,7 +131,7 @@ const Oshi = () => {
                     />
                   </a>
                   <a
-                    href="https://github.com/OriginalCube/WE-Genshin-Impact"
+                    href="https://github.com/OriginalCube/WE-oshi-ko"
                     target="blank_"
                     className=" h-1/2 w-auto"
                   >
