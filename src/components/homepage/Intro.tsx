@@ -33,7 +33,9 @@ const Intro = (props: IntroProps) => {
             transition={{ delay: 0.25, duration: 1 }}
             className="w-2/3 h-full flex items-start justify-center"
           >
-            <motion.button
+            <motion.a
+              href="https://github.com/OriginalCube/showcase"
+              target="blank_"
               whileHover={{
                 scale: 1.1,
                 boxShadow: "-4px 8px rgb(255,255,255)",
@@ -43,7 +45,7 @@ const Intro = (props: IntroProps) => {
               onClick={() => setColorId(colorId + 1)}
             >
               Cube's
-            </motion.button>
+            </motion.a>
           </motion.div>
           <div className="w-5/6 md:w-1/3 h-1/3 md:h-full flex-col">
             <motion.div
