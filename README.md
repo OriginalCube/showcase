@@ -8,6 +8,6 @@ This is my portfolio, where you can see most of my work as of July 23. This is j
 
 ## Built with
 
-React JS for front-end
-Tailwind CSS
-Framer-motion for animations
+React JS for front-end <br/>
+Tailwind CSS <br/>
+Framer-motion for animations <br/>
