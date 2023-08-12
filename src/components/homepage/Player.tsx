@@ -62,7 +62,7 @@ const Player = (props: any) => {
   };
 
   React.useEffect(() => {
-    audioRef.current.src = `/assets/bocchi/songs/${bocchi.name[props.id]}.flac`;
+    audioRef.current.src = `/assets/bocchi/songs/${bocchi.name[props.id]}.mp3`;
     audioRef.current.volume = 0.2;
     if (onStart) {
       setIsPlaying(true);

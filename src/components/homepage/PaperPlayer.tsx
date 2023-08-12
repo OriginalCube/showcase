@@ -62,7 +62,7 @@ const PaperPlayer = (props: any) => {
 
   React.useEffect(() => {
     audioRef.current = new Audio(
-      `/assets/music-paper/songs/${paperSongs[props.id]}.mp3`
+      `/assets/music-paper/songs/${paperSongs[props.id]}.mp3`,
     );
     audioRef.current.volume = 0.2;
     if (onStart) {
@@ -91,6 +91,7 @@ const PaperPlayer = (props: any) => {
     <div className="h-full w-full flex-col items-center justify-evenly">
       <div className="h-1/6 w-full flex items-center justify-center">
         <input
+          title="player"
           className="w-2/3 h-full"
           type="range"
           step="1"
